@@ -1,9 +1,9 @@
-# `generate`
+# `ptmpdy`
 
 **Usage**:
 
 ```console
-$ generate [OPTIONS] FP OUTPUT
+$ ptmpdy [OPTIONS] FP OUTPUT
 ```
 
 **Arguments**:
