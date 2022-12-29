@@ -1,0 +1,40 @@
+service: sample-service
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  memorySize: 128
+  timeout: 60
+  region: xxxx
+  tracing:
+    apiGateway: true
+    lambda: true
+  deploymentBucket:
+    name: bucket-name
+  iam:
+    role: iam-role
+
+functions:
+  sample-handler:
+    handler: path.to.handler
+    timeout: 30
+    description: "handler description"
+  sample-handler2:
+    handler: path.to.handler
+    timeout: 30
+    description: "handler description 2"
+  sample-event-handler:
+    handler: path.to.handler
+    timeout: 900
+    memorySize: 512
+    events:
+      - sqs:
+          arn: sqs-arn
+  api-sample:
+    handler: path.to.handler
+    memorySize: 512
+    events:
+      - http:
+          method: GET
+          path: sample
