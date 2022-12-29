@@ -1,7 +1,7 @@
-from typer import Typer, Exit
-from rich import print
-from jinja2 import Template
 import yaml
+from jinja2 import Template
+from rich import print
+from typer import Exit, Typer
 
 app = Typer()
 
@@ -28,23 +28,21 @@ def generate(fp: str, output: str, dry_run: bool = False) -> None:
         print("functions are not declared")
         Exit(1)
 
-    service = data['service']
+    service = data["service"]
     handlers = {}
-    for handler_suffix, meta in data['functions'].items():
+    for handler_suffix, meta in data["functions"].items():
         if meta.get("events"):
             continue
 
-        handlers.update({handler_suffix.replace("-", "_"): f"{service}-{handler_suffix}"})
+        handlers.update(
+            {handler_suffix.replace("-", "_"): f"{service}-{handler_suffix}"}
+        )
 
     template: Template = Template(source=TEMPLATE)
     out = template.render(handlers=handlers)
 
     if dry_run:
         print(out)
-
-    with open(output, 'w') as f:
-        f.write(out)
-
-
-if __name__ == "__main__":
-    app()
+    else:
+        with open(output, "w") as f:
+            f.write(out)
