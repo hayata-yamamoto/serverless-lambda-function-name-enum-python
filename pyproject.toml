@@ -7,6 +7,8 @@ authors = ["hayata-yamamoto <hayata.yamamoto.work@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 PyYAML = "^6.0"
+pydantic = "^1.10.2"
+typer = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 
