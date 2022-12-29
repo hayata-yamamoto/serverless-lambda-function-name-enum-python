@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "slsgen"
+name = "ptmpdy"
 version = "0.1.0"
 description = ""
 authors = ["hayata-yamamoto <hayata.yamamoto.work@gmail.com>"]
