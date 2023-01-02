@@ -1,7 +1,9 @@
+from typing import Optional
+
 import yaml
 from jinja2 import Template
 from rich import print
-from typer import Exit, Typer
+from typer import Argument, Exit, Option, Typer
 
 app = Typer()
 
@@ -16,7 +18,12 @@ class LambdaHandlers(str, Enum):
 
 
 @app.command()
-def generate(fp: str, output: str, dry_run: bool = False) -> None:
+def generate(
+    fp: str = Argument(...),
+    output: str = Argument(...),
+    stage: Optional[str] = Option(default=None),
+    dry_run: bool = Option(default=False),
+) -> None:
     with open(fp) as f:
         data = yaml.safe_load(f)
 
@@ -34,9 +41,12 @@ def generate(fp: str, output: str, dry_run: bool = False) -> None:
         if meta.get("events"):
             continue
 
-        handlers.update(
-            {handler_suffix.replace("-", "_"): f"{service}-{handler_suffix}"}
-        )
+        if stage:
+            handler_name = f"{service}-{stage}-{handler_suffix}"
+        else:
+            handler_name = f"{service}-{handler_suffix}"
+
+        handlers.update({handler_suffix.replace("-", "_"): handler_name})
 
     template: Template = Template(source=TEMPLATE)
     out = template.render(handlers=handlers)
