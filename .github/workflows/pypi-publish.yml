@@ -1,4 +1,4 @@
-name: Workflow on pushing tags at main
+name: Workflow on new release published
 on:
   release:
     types:
