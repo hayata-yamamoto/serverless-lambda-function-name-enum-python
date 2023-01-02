@@ -1,0 +1,22 @@
+name: Workflow on new release published
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Run image
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.1.13
+      - name: Build and Publish
+        run: |
+          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+          poetry publish --build
