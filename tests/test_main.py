@@ -27,6 +27,13 @@ def test_can_generate_python_code() -> None:
         assert export_path.exists()
 
 
+def test_can_generate_python_code_with_stage_parameter() -> None:
+    with remove_test_file():
+        ret = runner.invoke(app, [str(config_path), str(export_path), "--stage", "dev"])
+        assert ret.exit_code == 0
+        assert export_path.exists()
+
+
 def test_can_show_python_code_will_be_generated_when_pass_dry_run() -> None:
     with remove_test_file():
         ret = runner.invoke(app, [str(config_path), str(export_path), "--dry-run"])
