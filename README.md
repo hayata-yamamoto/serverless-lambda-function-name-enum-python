@@ -1,14 +1,17 @@
-# ptmpdy 
+# ptmpdy
 
-ptmpdy project is aiming to reduce troubles in serverless stack operations. 
+[![PyPI version](https://badge.fury.io/py/ptmpdy.svg)](https://badge.fury.io/py/ptmpdy)
+[![Workflow on new release published](https://github.com/hayata-yamamoto/ptmpdy/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/hayata-yamamoto/ptmpdy/actions/workflows/pypi-publish.yml)
+
+ptmpdy project is aiming to reduce troubles in serverless stack operations.
 
 "ptmpdy" is "Please Tell Me Path Declaration in Yaml"
 
-## Overview 
+## Overview
 
-This CLI tools provide code generation experience. 
+This CLI tools provide code generation experience.
 
-If you have a [serverless.yml](tests/test_data/serverless.yml) to host your lambda application, ptmpdy provides Python Enum objects like 
+If you have a [serverless.yml](tests/test_data/serverless.yml) to host your lambda application, ptmpdy provides Python Enum objects like
 
 ```python
 from enum import Enum
@@ -20,29 +23,28 @@ class LambdaHandlers(str, Enum):
 
 ```
 
-## Usage 
+## Usage
 
-Please see [usage.md](usage.md).
+Please see [usage.md](docs/usage.md).
 
-## Project Scope 
+## Project Scope
 
-Serverless Framework 
+Serverless Framework
 
 - [x] Adding to Python code generation from `serverless.yml`
-- [ ] Adding serverless plugin 
+- [ ] Adding serverless plugin
 
+## Development
 
-## Development 
-
-```bash 
-poetry install 
+```bash
+poetry install
 ```
 
-## Contributions 
+## Contributions
 
 This project is welcome to contribute. When you want to contribute this project, please follow contribute guides.
 
-**Guides** 
+**Guides**
 
-1. Vote issues 
+1. Vote issues
 2. Create a PR to main branch in assigning to @hayata-yamamoto as a reviewer
