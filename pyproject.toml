@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ptmpdy"
-version = "0.2.0"
+version = "0.2.1"
 description = ""
 authors = ["hayata-yamamoto <hayata.yamamoto.work@gmail.com>"]
 readme = "README.md"
