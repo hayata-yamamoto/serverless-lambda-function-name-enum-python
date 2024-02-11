@@ -1,11 +1,7 @@
-# ptmpdy
+# serverless-lambda-function-name-enum-python
 
 [![PyPI version](https://badge.fury.io/py/ptmpdy.svg)](https://badge.fury.io/py/ptmpdy)
 [![Workflow on new release published](https://github.com/hayata-yamamoto/ptmpdy/actions/workflows/pypi-publish.yml/badge.svg)](https://github.com/hayata-yamamoto/ptmpdy/actions/workflows/pypi-publish.yml)
-
-ptmpdy project is aiming to reduce troubles in serverless stack operations.
-
-"ptmpdy" is "Please Tell Me Path Declaration in Yaml"
 
 ## Overview
 
