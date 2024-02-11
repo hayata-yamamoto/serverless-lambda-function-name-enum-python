@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "ptmpdy"
+name = "sls_enum"
 version = "0.2.1"
 description = ""
 authors = ["hayata-yamamoto <hayata.yamamoto.work@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-ptmpdy = "ptmpdy.main:app"
+ptmpdy = "sls_enum.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.9"

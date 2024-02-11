@@ -1,4 +1,4 @@
-from ptmpdy.main import app
+from sls_enum.main import app
 from contextlib import contextmanager
 from typer.testing import CliRunner
 from pathlib import Path
