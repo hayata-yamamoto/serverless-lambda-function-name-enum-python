@@ -1,9 +1,9 @@
-# `ptmpdy`
+# `sls_enum`
 
 **Usage**:
 
 ```console
-$ ptmpdy [OPTIONS] FP OUTPUT
+$ sls_enum [OPTIONS] FP OUTPUT
 ```
 
 **Arguments**:
