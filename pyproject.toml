@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sls_enum"
-version = "0.2.1"
+version = "0.3.0"
 description = ""
 authors = ["hayata-yamamoto <hayata.yamamoto.work@gmail.com>"]
 readme = "README.md"
